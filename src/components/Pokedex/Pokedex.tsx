@@ -1,4 +1,5 @@
 import React from "react";
+import PokeSearchResult from "../PokeSearchResult/PokeSearchResult";
 import "./Pokedex.css"
 
 const Pokedex = () =>{
@@ -8,7 +9,7 @@ const Pokedex = () =>{
                 <p>list of pokemon</p>
                 </div>
             <div className="pokesearchresult-container">
-                <p>Poke search results</p>
+                <PokeSearchResult></PokeSearchResult>
             </div>
         </div>
     )
