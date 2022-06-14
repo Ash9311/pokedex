@@ -1,12 +1,13 @@
 import React from "react";
 import PokeSearchResult from "../PokeSearchResult/PokeSearchResult";
+import SearchBox from "../SearchBox/SearchBox";
 import "./Pokedex.css"
 
 const Pokedex = () =>{
     return(
         <div className="pokedex-container">
             <div className="pokelist-container">
-                <p>list of pokemon</p>
+                <SearchBox />
                 </div>
             <div className="pokesearchresult-container">
                 <PokeSearchResult></PokeSearchResult>
