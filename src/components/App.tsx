@@ -3,7 +3,20 @@ import { pokemonData } from "../data/PokemonData";
 import './App.css';
 import Pokedex from "./Pokedex/Pokedex";
 
-class App extends React.Component{
+interface AppState {
+    searchField: string;
+    allPokemon: any;
+    searchedPokemon: any;
+    selectedPokemon: any;
+}
+class App extends React.Component<any, AppState>{
+
+    states = {
+        searchFile:"",
+        allPokemons:[],
+        searchedPokemons:[],
+        selectedPokemons: undefined
+    };
 
     componentDidMount(){
         const pokeData = pokemonData;
