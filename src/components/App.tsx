@@ -12,7 +12,7 @@ interface AppState {
 class App extends React.Component<any, AppState>{
 
     states = {
-        searchFile:"",
+        searchField:"",
         allPokemons:[],
         searchedPokemons:[],
         selectedPokemons: undefined
