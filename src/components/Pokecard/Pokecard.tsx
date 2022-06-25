@@ -4,9 +4,12 @@ import './Pokecard.css';
 const Pokecard = (props: any) =>{
    return( 
        <div className="pokecard">
-           <p>{props.name}</p>
-       </div>
+           <p>{props.name}</p>  
+        
+       </div>       
    )
+
+       
 }
     //  add 2 numbers         
 
