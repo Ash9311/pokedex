@@ -11,6 +11,6 @@ const Pokecard = (props: any) =>{
 
        
 }
-    //  add 2 numbers         
+       
 
 export default Pokecard;
