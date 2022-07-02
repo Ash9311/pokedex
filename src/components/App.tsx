@@ -7,7 +7,7 @@ import Pokedex from "./Pokedex/Pokedex";
 interface AppState {
     searchField: string;
     allPokemon: PokemonSchema[];
-    searchedPokemon: PokemonSchema[];
+    searchedPokemons: PokemonSchema[];
     selectedPokemon: PokemonSchema | undefined;
 }
 class App extends React.Component<any, AppState>{
@@ -19,7 +19,7 @@ class App extends React.Component<any, AppState>{
         selectedPokemons: undefined
     };
 
-    patchPokemonData = (pokemons: UnpatchedPokemonSchema[]): PokemonSchema[]=>{
+    patchPokemonData = (pokemons: UnpatchedPokemonSchema[])=>{
         const patchedPokemons = pokemons.map((pokemon)=>{
             let parsedSprites: PokemonSpriteSchema = {
                 normal:undefined,
@@ -49,7 +49,7 @@ class App extends React.Component<any, AppState>{
        //update the state with the patched pokemons
        this.setState({
         allPokemon: patchedPokemons,
-        searchedPokemon:    patchedPokemons
+        searchedPokemons: patchedPokemons
        })
     }
 
@@ -57,7 +57,7 @@ class App extends React.Component<any, AppState>{
         return(
              <div className="App">
            <h1>Pokedex</h1> 
-           <Pokedex />
+           <Pokedex searchedPokemons={this.states.searchedPokemons}/>
             </div>
       
         );

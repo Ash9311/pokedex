@@ -1,16 +1,19 @@
 import React from "react";
 import './Pokecard.css';
 
-const Pokecard = (props: any) =>{
+interface PokecardProps{
+    spriteUrl?: string;
+    name:string;
+}
+
+const Pokecard = ({spriteUrl,name}: PokecardProps) =>{
    return( 
        <div className="pokecard">
-           <p>{props.name}</p>  
-        
+            <img className="pokemon-sprite" alt="pokemon" src={spriteUrl} />
+           <p>{name}</p>  
        </div>       
-   )
-
+   );
+};
        
-}
-    //  add 2 numbers         
 
 export default Pokecard;
