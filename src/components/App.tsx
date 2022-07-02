@@ -53,11 +53,30 @@ class App extends React.Component<any, AppState>{
        })
     }
 
+    handleInputChange = (inputValue: string)=>{
+        console.log(`Input changed to ${inputValue}`);
+        //filter the searched pokemons
+        const {allPokemon} = this.state;
+        const searchedPokemons = allPokemon.filter(
+            (pokemon: PokemonSchema) =>{
+                return (
+                    pokemon.name && pokemon.name.toLowerCase().includes(inputValue.toLowerCase()) 
+                )
+            }
+        )
+         this.setState({
+            searchField: inputValue,
+            searchedPokemons: searchedPokemons
+         })   
+    }
+
     render(){
         return(
              <div className="App">
            <h1>Pokedex</h1> 
-           <Pokedex searchedPokemons={this.states.searchedPokemons}/>
+           <Pokedex searchedPokemons={this.states.searchedPokemons}
+            onInputChange={this.handleInputChange}
+           />
             </div>
       
         );
