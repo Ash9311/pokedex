@@ -3,7 +3,7 @@ import './Pokecard.css';
 
 interface PokecardProps{
     spriteUrl?: string;
-    name:string;
+    name:string | undefined;
 }
 
 const Pokecard = ({spriteUrl,name}: PokecardProps) =>{

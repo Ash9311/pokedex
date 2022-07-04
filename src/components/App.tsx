@@ -6,17 +6,17 @@ import Pokedex from "./Pokedex/Pokedex";
 
 interface AppState {
     searchField: string;
-    allPokemon: PokemonSchema[];
+    allPokemons: PokemonSchema[];
     searchedPokemons: PokemonSchema[];
     selectedPokemon: PokemonSchema | undefined;
 }
 class App extends React.Component<any, AppState>{
     //fun
-    states = {
+    state = {
         searchField:"",
         allPokemons:[],
         searchedPokemons:[],
-        selectedPokemons: undefined
+        selectedPokemon: undefined,
     };
 
     patchPokemonData = (pokemons: UnpatchedPokemonSchema[])=>{
@@ -48,7 +48,7 @@ class App extends React.Component<any, AppState>{
 
        //update the state with the patched pokemons
        this.setState({
-        allPokemon: patchedPokemons,
+        allPokemons: patchedPokemons,
         searchedPokemons: patchedPokemons
        })
     }
@@ -56,8 +56,8 @@ class App extends React.Component<any, AppState>{
     handleInputChange = (inputValue: string)=>{
         console.log(`Input changed to ${inputValue}`);
         //filter the searched pokemons
-        const {allPokemon} = this.state;
-        const searchedPokemons = allPokemon.filter(
+        const {allPokemons} = this.state;
+        const searchedPokemons = allPokemons.filter(
             (pokemon: PokemonSchema) =>{
                 return (
                     pokemon.name && pokemon.name.toLowerCase().includes(inputValue.toLowerCase()) 
@@ -74,7 +74,7 @@ class App extends React.Component<any, AppState>{
         return(
              <div className="App">
            <h1>Pokedex</h1> 
-           <Pokedex searchedPokemons={this.states.searchedPokemons}
+           <Pokedex searchedPokemons={this.state.searchedPokemons}
             onInputChange={this.handleInputChange}
            />
             </div>

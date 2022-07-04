@@ -12,7 +12,7 @@ interface PokedexProps {
 }
 
 const Pokedex = ({searchedPokemons,onInputChange}: PokedexProps) =>{
-    console.log(pokemonData)
+    //console.log(pokemonData)
     return(
         <div className="pokedex-container">
             <div className="pokelist-container">
