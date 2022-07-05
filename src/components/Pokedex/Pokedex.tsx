@@ -8,19 +8,21 @@ import "./Pokedex.css"
 
 interface PokedexProps {
     searchedPokemons: PokemonSchema[];
+     selectedPokemon:PokemonSchema | undefined;   
     onInputChange:  (inputValue: string) => void;
+    onPokemonClick: (pokemonName: string) => void;
 }
 
-const Pokedex = ({searchedPokemons,onInputChange}: PokedexProps) =>{
+const Pokedex = ({searchedPokemons,selectedPokemon,onPokemonClick,onInputChange}: PokedexProps) =>{
     //console.log(pokemonData)
     return(
         <div className="pokedex-container">
             <div className="pokelist-container">
                 <SearchBox  onInputChange={onInputChange} />
-                <Pokelist searchedPokemons={searchedPokemons}/>
+                <Pokelist onPokemonClick={onPokemonClick} searchedPokemons={searchedPokemons}/>
                 </div>
             <div className="pokesearchresult-container">
-                <PokeSearchResult></PokeSearchResult>
+                <PokeSearchResult selectedPokemon={selectedPokemon}></PokeSearchResult>
             </div>
         </div>
     );

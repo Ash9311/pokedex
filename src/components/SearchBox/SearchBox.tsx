@@ -7,7 +7,7 @@ interface SearchboxProps {
 
 const SearchBox = ({onInputChange}:SearchboxProps) => {
     return(
-        <input
+        <input 
         onChange ={(e)=>{   
             console.log(e.target.value);
             onInputChange(e.target.value);
