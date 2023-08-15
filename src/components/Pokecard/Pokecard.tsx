@@ -8,8 +8,6 @@ const Pokecard = (props: any) =>{
         
        </div>       
    )
-
-       
 }
     //  add 2 numbers         
 
